@@ -1,0 +1,631 @@
+<!DOCTYPE html><html><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="x-dns-prefetch-control" content="off"><script src="https://puc.poecdn.net/authenticated_preview_page/standard.3ef2c256959faf5a756d.js"></script>
+    <meta charset="utf-8">
+    <title>Poe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://puc.poecdn.net/authenticated_preview_page/disableWebRTC.9710cebe07429a9e8e06.js"></script><meta name="x-poe-allow-downloads" content="true"><meta name="x-poe-datastore-behavior" content="disabled"><script src="https://puc.poecdn.net/authenticated_preview_page/tw.b9024aecac666455e183.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/deps.faccd16000d314dc16d5.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/exports.b0f0f482cdeb5302b0b9.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/renderer.75c73ae6b4235f62945a.js"></script><script>Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; } function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }var _react = require('react'); var _react2 = _interopRequireDefault(_react);
+
+
+
+
+
+var _lucidereact = require('lucide-react');
+
+
+
+
+var _recharts = require('recharts');
+
+/* ══════════════════════════════════════════
+   LOGOS MEJORADOS
+   ══════════════════════════════════════════ */
+
+function LogoFGS({ size = 48 }) {
+  return (
+    _react2.default.createElement('svg', { width: size, height: size, viewBox: "0 0 60 60"   , xmlns: "http://www.w3.org/2000/svg",}
+      /* Top face - brightest */
+      , _react2.default.createElement('polygon', { points: "30,6 52,19 30,32 8,19"   , fill: "#1e5a8a",})
+      /* Left face - darkest */
+      , _react2.default.createElement('polygon', { points: "8,19 30,32 30,58 8,45"   , fill: "#0c1f3d",})
+      /* Right face - medium */
+      , _react2.default.createElement('polygon', { points: "30,32 52,19 52,45 30,58"   , fill: "#163d6b",})
+      /* Top edge highlight */
+      , _react2.default.createElement('polyline', { points: "8,19 30,6 52,19"  , fill: "none", stroke: "#4a9fd8", strokeWidth: "0.7", opacity: "0.45",})
+      /* Left outer edge */
+      , _react2.default.createElement('polyline', { points: "8,19 8,45 30,58"  , fill: "none", stroke: "#1a4d7a", strokeWidth: "0.4", opacity: "0.3",})
+      /* Right outer edge */
+      , _react2.default.createElement('polyline', { points: "52,19 52,45 30,58"  , fill: "none", stroke: "#1a4d7a", strokeWidth: "0.4", opacity: "0.3",})
+      /* Center vertical edge */
+      , _react2.default.createElement('line', { x1: "30", y1: "32", x2: "30", y2: "58", stroke: "#07101f", strokeWidth: "0.7", opacity: "0.6",})
+      /* Center left edge */
+      , _react2.default.createElement('line', { x1: "30", y1: "32", x2: "8", y2: "19", stroke: "#3580b5", strokeWidth: "0.5", opacity: "0.25",})
+      /* Center right edge */
+      , _react2.default.createElement('line', { x1: "30", y1: "32", x2: "52", y2: "19", stroke: "#1d5580", strokeWidth: "0.5", opacity: "0.25",})
+      /* Top face inner shine */
+      , _react2.default.createElement('polygon', { points: "30,11 46,20.5 30,30 14,20.5"   , fill: "#2a6fa0", opacity: "0.25",})
+    )
+  );
+}
+
+function LogoAlcaldia({ size = 48 }) {
+  const uid = _react.useMemo.call(void 0, () => 'al' + Math.random().toString(36).substr(2, 5), []);
+  return (
+    _react2.default.createElement('svg', { width: size, height: size, viewBox: "0 0 100 100"   , xmlns: "http://www.w3.org/2000/svg",}
+      , _react2.default.createElement('defs', null
+        , _react2.default.createElement('path', { id: `${uid}t`, d: "M 10,50 A 40,40 0 0,1 90,50"      , fill: "none",})
+        , _react2.default.createElement('path', { id: `${uid}b`, d: "M 10,50 A 40,40 0 0,0 90,50"      , fill: "none",})
+      )
+
+      /* Outer ring */
+      , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "49", fill: "#c8102e",})
+      , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "48", fill: "none", stroke: "#a30d22", strokeWidth: "1",})
+      , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "45.5", fill: "none", stroke: "#fbbf24", strokeWidth: "0.8", opacity: "0.6",})
+      , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "34", fill: "white",})
+      , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "33.5", fill: "none", stroke: "#c8102e", strokeWidth: "0.5", opacity: "0.4",})
+
+      /* Curved text top */
+      , _react2.default.createElement('text', { fontSize: "8.2", fill: "#fff", fontWeight: "bold", fontFamily: "Arial,sans-serif", letterSpacing: "1.8",}
+        , _react2.default.createElement('textPath', { href: `#${uid}t`, startOffset: "50%", textAnchor: "middle",}, "MUNICIPIO DE NECOCLÍ"  )
+      )
+
+      /* Curved text bottom */
+      , _react2.default.createElement('text', { fontSize: "7.8", fill: "#fff", fontWeight: "bold", fontFamily: "Arial,sans-serif", letterSpacing: "1.2",}
+        , _react2.default.createElement('textPath', { href: `#${uid}b`, startOffset: "50%", textAnchor: "middle",}, "ALCALDÍA MUNICIPAL" )
+      )
+
+      /* Gold dots at equator */
+      , _react2.default.createElement('circle', { cx: "10", cy: "50", r: "1.8", fill: "#fbbf24",})
+      , _react2.default.createElement('circle', { cx: "90", cy: "50", r: "1.8", fill: "#fbbf24",})
+
+      /* Shield */
+      , _react2.default.createElement('path', { d: "M 37,30 L 63,30 L 63,54 C 63,63 50,71 50,71 C 50,71 37,63 37,54 Z"              ,
+            fill: "#fff8f0", stroke: "#c8102e", strokeWidth: "1.6",})
+      /* Shield top band */
+      , _react2.default.createElement('path', { d: "M 37,30 L 63,30 L 63,39 L 37,39 Z"        , fill: "#c8102e", opacity: "0.85",})
+      /* Star on band */
+      , _react2.default.createElement('text', { x: "50", y: "37.5", textAnchor: "middle", fontSize: "7", fill: "#fbbf24", fontFamily: "Arial",}, "★")
+      /* Mountains */
+      , _react2.default.createElement('polygon', { points: "40,56 46,44 52,50 58,42 63,54"    , fill: "#1d6b35", opacity: "0.5",})
+      /* Sun */
+      , _react2.default.createElement('circle', { cx: "50", cy: "44", r: "3.5", fill: "#f59e0b", opacity: "0.7",})
+      , _react2.default.createElement('g', { stroke: "#f59e0b", strokeWidth: "0.7", opacity: "0.5",}
+        , _react2.default.createElement('line', { x1: "50", y1: "39", x2: "50", y2: "40.5",})
+        , _react2.default.createElement('line', { x1: "50", y1: "47.5", x2: "50", y2: "49",})
+        , _react2.default.createElement('line', { x1: "45", y1: "44", x2: "46.5", y2: "44",})
+        , _react2.default.createElement('line', { x1: "53.5", y1: "44", x2: "55", y2: "44",})
+      )
+      /* Water */
+      , _react2.default.createElement('path', { d: "M 38,57 Q 43,55 48,57 Q 53,59 58,57 Q 61,56 63,56"          ,
+            fill: "none", stroke: "#2563eb", strokeWidth: "1.4", opacity: "0.5",})
+      , _react2.default.createElement('path', { d: "M 38,60 Q 43,58 48,60 Q 53,62 58,60"       ,
+            fill: "none", stroke: "#2563eb", strokeWidth: "1", opacity: "0.35",})
+    )
+  );
+}
+
+/* ══════════════════════════════════════════
+   DATA (sin cambios)
+   ══════════════════════════════════════════ */
+
+const ACTORES = [
+  { grupo: "🧒 Primera infancia", opciones: ["Atención a la Primera Infancia (ICBF, Hogares, CDI u otro operador)"]},
+  { grupo: "🏫 Educación básica y media", opciones: ["Institución Educativa Oficial","Institución Educativa No Oficial (privada o de cobertura)"]},
+  { grupo: "🎓 Educación terciaria, superior y técnica", opciones: ["Universidad","Institución de Educación para el Trabajo y el Desarrollo Humano (ETDH)","Institución Técnica o Tecnológica"]},
+  { grupo: "🏛 Sector público y gubernamental", opciones: ["Alcaldía Municipal de Necoclí","Concejo Municipal o Asamblea Departamental","Secretaría de Educación Municipal o Departamental","Gobernación de Antioquia","Entidades del Gobierno Nacional (MEN, ICBF, Unidad para las Víctimas, Prosperidad Social, DNP, etc.)"]},
+  { grupo: "💼 Otros actores del ecosistema educativo", opciones: ["Fundación u Organización aliada (FGS, United Way, Luker, Fraternidad Medellín, etc.)","Acción Comunal, Organización Comunitaria o Cultural","Junta Municipal de Educación (JUME)","Representación de Padres de familia","Representación de Estudiantes","Consejo Municipal de Política Social (COMPOS)","Empresa o Aliado del sector productivo"]}
+];
+
+const ROLES = ["Rector(a)","Coordinador(a)","Docente de Aula","Docente Orientador(a)","Directivo Docente","Líder comunitario","Representante indígena","Representante afrodescendiente","Funcionario(a) municipal","Funcionario(a) departamental","Funcionario(a) nacional","Representante ONG / Fundación","Padre / Madre de familia","Estudiante","Representante primera infancia","Representante educación terciaria","Representante sector productivo","Otro"];
+
+const LINEAS = [
+  { id:"L1", nombre:"Equidad e Inclusión", color:"#3b82f6", icon:_lucidereact.Heart, descripcion:"Acceso, permanencia y atención diferencial para todas las poblaciones" },
+  { id:"L2", nombre:"Calidad Educativa", color:"#10b981", icon:_lucidereact.Star, descripcion:"Formación docente, competencias básicas, innovación pedagógica" },
+  { id:"L3", nombre:"Identidad y Pertinencia", color:"#f59e0b", icon:_lucidereact.Globe, descripcion:"PEI territorializados, cultura, proyectos productivos" },
+  { id:"L4", nombre:"Gobernanza Educativa", color:"#8b5cf6", icon:_lucidereact.Shield, descripcion:"Gestión, articulación interinstitucional, seguimiento, infraestructura" }
+];
+
+const PROYECTOS = {
+  L1:[{id:"L1P1",nombre:"Transporte escolar para zonas rurales dispersas",meta:"100 % veredas con oferta"},{id:"L1P2",nombre:"Fortalecimiento del PAE (Alimentación Escolar)",meta:"Deserción ≤ 2 %"},{id:"L1P3",nombre:"Becas y apoyos económicos para permanencia",meta:"Cobertura 98 %"},{id:"L1P4",nombre:"Atención diferencial: indígenas, afro, discapacidad, migrantes",meta:"100 % atención diferencial"},{id:"L1P5",nombre:"Ampliación de cobertura en veredas sin oferta completa",meta:"Cobertura total"}],
+  L2:[{id:"L2P1",nombre:"Formación continua docente: TIC, metodologías activas",meta:"80 % con posgrado"},{id:"L2P2",nombre:"Fortalecimiento en lenguaje y matemáticas",meta:"Saber 11 ≥ 300"},{id:"L2P3",nombre:"Proyectos de innovación pedagógica y laboratorios STEAM",meta:"≥ 20 proyectos/año"},{id:"L2P4",nombre:"Competencias socioemocionales y ciudadanas",meta:"Satisfacción ≥ 90 %"},{id:"L2P5",nombre:"Dotación digital y conectividad en sedes",meta:"Ratio ≤ 3:1 · Internet 100 %"}],
+  L3:[{id:"L3P1",nombre:"Actualización PEI con enfoque territorial y cultural",meta:"100 % PEI actualizados"},{id:"L3P2",nombre:"Proyectos productivos en educación media (SENA)",meta:"80 % estudiantes de media"},{id:"L3P3",nombre:"Cátedra municipal de multiculturalidad (Zenú, Tule, afro)",meta:"100 % de IE"},{id:"L3P4",nombre:"Aulas abiertas y educación ambiental",meta:"100 % IE con proyectos"},{id:"L3P5",nombre:"Articulación con educación superior y terciaria",meta:"Trayectorias completas"}],
+  L4:[{id:"L4P1",nombre:"Fortalecimiento Mesa Municipal y JUME",meta:"Gobernanza activa"},{id:"L4P2",nombre:"Sistema de información y seguimiento educativo",meta:"Tablero semestral"},{id:"L4P3",nombre:"Articulación interinstitucional y alianzas",meta:"Red articulada"},{id:"L4P4",nombre:"Rendición de cuentas y transparencia educativa",meta:"Audiencias anuales"},{id:"L4P5",nombre:"Plan maestro de infraestructura escolar",meta:"100 % sedes adecuadas"}]
+};
+
+const PLAZOS = [{id:"corto",label:"Corto plazo (2025–2027)",icon:"🟢",tag:"25-27"},{id:"mediano",label:"Mediano plazo (2028–2031)",icon:"🟡",tag:"28-31"},{id:"largo",label:"Largo plazo (2032–2035)",icon:"🔴",tag:"32-35"}];
+
+/* ══════════════════════════════════════════ */
+
+function StarRating({ value, onChange, max = 5 }) {
+  return (
+    _react2.default.createElement('div', { className: "flex gap-1" ,}
+      , Array.from({ length: max }).map((_, i) => (
+        _react2.default.createElement('button', { key: i, type: "button", onClick: () => onChange(i + 1),
+          className: `transition-all duration-150 ${i < value ? 'text-yellow-400 scale-110' : 'text-gray-300 hover:text-yellow-200'}`,}
+          , _react2.default.createElement(_lucidereact.Star, { size: 22, fill: i < value ? 'currentColor' : 'none',} )
+        )
+      ))
+    )
+  );
+}
+
+function StepIndicator({ current, labels }) {
+  return (
+    _react2.default.createElement('div', { className: "flex items-center justify-center gap-1 mb-6 flex-wrap"     ,}
+      , labels.map((label, i) => (
+        _react2.default.createElement(_react2.default.Fragment, { key: i,}
+          , _react2.default.createElement('div', { className: "flex flex-col items-center"  ,}
+            , _react2.default.createElement('div', { className: `w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+              i < current ? 'bg-green-500 text-white' : i === current ? 'bg-blue-600 text-white ring-4 ring-blue-200' : 'bg-gray-200 text-gray-500'
+            }`,}, i < current ? _react2.default.createElement(_lucidereact.Check, { size: 16,} ) : i + 1)
+            , _react2.default.createElement('span', { className: `text-xs mt-1 text-center leading-tight ${i === current ? 'text-blue-700 font-semibold' : 'text-gray-400'}`, style: {maxWidth:'64px'},}, label)
+          )
+          , i < labels.length - 1 && _react2.default.createElement('div', { className: `w-8 h-0.5 mb-5 ${i < current ? 'bg-green-400' : 'bg-gray-200'}`,} )
+        )
+      ))
+    )
+  );
+}
+
+/* ══════════════════════════════════════════ */
+
+ function PEMPriorizacion() {
+  const [step, setStep] = _react.useState.call(void 0, 0);
+  const [copied, setCopied] = _react.useState.call(void 0, false);
+  const [submitted, setSubmitted] = _react.useState.call(void 0, false);
+  const [formData, setFormData] = _react.useState.call(void 0, { tipoActor:"", nombreInstitucion:"", rol:"", nombre:"", correo:"", telefono:"" });
+  const [lineRatings, setLineRatings] = _react.useState.call(void 0, { L1:0, L2:0, L3:0, L4:0 });
+  const [lineRanking, setLineRanking] = _react.useState.call(void 0, ["L1","L2","L3","L4"]);
+  const [projectRatings, setProjectRatings] = _react.useState.call(void 0, {});
+  const [projectPlazos, setProjectPlazos] = _react.useState.call(void 0, {});
+  const [comentarios, setComentarios] = _react.useState.call(void 0, { fortaleza:"", necesidad:"", compromiso:"", sugerencia:"" });
+
+  const sectorOf = (tipo) => { for (const g of ACTORES) { if (g.opciones.includes(tipo)) return g.grupo; } return ''; };
+  const displayInstitucion = formData.nombreInstitucion ? `${formData.nombreInstitucion} (${formData.tipoActor})` : formData.tipoActor;
+  const isStep1Valid = formData.tipoActor && formData.rol && formData.nombre;
+
+  const moveLineUp = (idx) => { if (idx === 0) return; const n = [...lineRanking]; [n[idx-1], n[idx]] = [n[idx], n[idx-1]]; setLineRanking(n); };
+  const moveLineDown = (idx) => { if (idx === lineRanking.length - 1) return; const n = [...lineRanking]; [n[idx], n[idx+1]] = [n[idx+1], n[idx]]; setLineRanking(n); };
+
+  const radarData = _react.useMemo.call(void 0, () => LINEAS.map(l => ({ linea: l.nombre.split(' ')[0], valor: lineRatings[l.id] || 0, fullMark: 5 })), [lineRatings]);
+
+  const barData = _react.useMemo.call(void 0, () => LINEAS.map(l => {
+    const vals = PROYECTOS[l.id].map(p => projectRatings[p.id] || 0).filter(v => v > 0);
+    const avg = vals.length > 0 ? vals.reduce((s, v) => s + v, 0) / vals.length : 0;
+    return { nombre: l.id, promedio: Math.round(avg * 10) / 10, fill: l.color };
+  }), [projectRatings]);
+
+  const topProjects = _react.useMemo.call(void 0, () => Object.entries(projectRatings).filter(([,v]) => v >= 4).map(([k,v]) => {
+    const linea = LINEAS.find(l => PROYECTOS[l.id].some(p => p.id === k));
+    const proj = linea ? PROYECTOS[linea.id].find(p => p.id === k) : null;
+    return { id:k, rating:v, nombre:_optionalChain([proj, 'optionalAccess', _2 => _2.nombre])||k, linea:_optionalChain([linea, 'optionalAccess', _3 => _3.id]), color:_optionalChain([linea, 'optionalAccess', _4 => _4.color]), plazo:projectPlazos[k] };
+  }).sort((a,b) => b.rating - a.rating).slice(0, 10), [projectRatings, projectPlazos]);
+
+  const generateJSON = () => JSON.stringify({
+    timestamp: new Date().toISOString(),
+    identificacion: { ...formData, sector: sectorOf(formData.tipoActor), institucionCompleta: displayInstitucion },
+    lineas: { calificaciones: lineRatings, ranking: lineRanking },
+    proyectos: { calificaciones: projectRatings, plazos: projectPlazos },
+    comentarios
+  }, null, 2);
+
+  const handleCopy = () => {
+    const text = generateJSON();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
+    }
+  };
+
+  const APPS_SCRIPT_URL = "const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby.../exec";";
+  const [sending, setSending] = _react.useState.call(void 0, false);
+  const [sendError, setSendError] = _react.useState.call(void 0, null);
+
+  const handleSubmit = async () => {
+    setSending(true);
+    setSendError(null);
+    const payload = generateJSON();
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: payload
+      });
+    } catch (e) {
+      console.error('Error enviando al servidor:', e);
+      setSendError('Hubo un problema al enviar. Por favor copia el JSON y compártelo manualmente.');
+    }
+    setSending(false);
+    setSubmitted(true);
+  };
+  const STEPS = ["Datos","Líneas","Proyectos","Aportes","Resumen"];
+
+  if (submitted) {
+    return (
+      _react2.default.createElement('div', { className: "min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4"        ,}
+        , _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full text-center"      ,}
+          , _react2.default.createElement('div', { className: "flex items-center justify-center gap-6 mb-6"    ,}
+            , _react2.default.createElement('div', { className: "flex flex-col items-center"  ,}
+              , _react2.default.createElement(LogoFGS, { size: 56,} )
+              , _react2.default.createElement('span', { className: "text-[9px] font-bold text-gray-500 mt-1 tracking-wide"    ,}, "FUNDACIÓN GRUPO SOCIAL"  )
+            )
+            , _react2.default.createElement('div', { className: "w-px h-14 bg-gray-200"  ,} )
+            , _react2.default.createElement('div', { className: "flex flex-col items-center"  ,}
+              , _react2.default.createElement(LogoAlcaldia, { size: 56,} )
+              , _react2.default.createElement('span', { className: "text-[9px] font-bold text-gray-500 mt-1 tracking-wide"    ,}, "ALCALDÍA DE NECOCLÍ"  )
+            )
+          )
+          , _react2.default.createElement('div', { className: "w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"        ,}
+            , _react2.default.createElement(_lucidereact.CheckCircle2, { size: 40, className: "text-green-600",} )
+          )
+          , _react2.default.createElement('h2', { className: "text-2xl font-bold text-gray-800 mb-2"   ,}, "¡Gracias por tu participación!"   )
+          , _react2.default.createElement('p', { className: "text-gray-600 mb-1" ,}, "Tu priorización ha sido registrada exitosamente."     )
+          , _react2.default.createElement('p', { className: "text-sm text-gray-500 mb-6"  ,}, formData.nombre, " — "  , displayInstitucion)
+          , _react2.default.createElement('button', { onClick: handleCopy, className: "flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg mx-auto mb-6"              ,}
+            , copied ? _react2.default.createElement(_lucidereact.Check, { size: 18,}) : _react2.default.createElement(_lucidereact.Copy, { size: 18,}), " " , copied ? "¡Copiado!" : "Copiar JSON"
+          )
+          , _react2.default.createElement('div', { className: "bg-gray-50 rounded-lg p-4 mb-4"   ,}
+            , _react2.default.createElement('p', { className: "text-xs text-gray-500 mb-2"  ,}, "Datos exportados (JSON):"  )
+            , _react2.default.createElement('div', { className: "bg-gray-900 rounded-lg p-3 text-left max-h-40 overflow-y-auto"     ,}
+              , _react2.default.createElement('pre', { className: "text-green-400 text-xs whitespace-pre-wrap break-all"   ,}, generateJSON())
+            )
+          )
+          , _react2.default.createElement('button', { onClick: () => { setSubmitted(false); setStep(0); }, className: "text-blue-600 text-sm hover:underline"  ,}, "Realizar otra priorización"  )
+        )
+      )
+    );
+  }
+
+  return (
+    _react2.default.createElement('div', { className: "min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50"    ,}
+      /* HEADER */
+      , _react2.default.createElement('div', { className: "bg-gradient-to-r from-[#0d2240] via-[#1a3a5c] to-[#0f6b3a] text-white"    ,}
+        , _react2.default.createElement('div', { className: "max-w-4xl mx-auto px-4 py-4"   ,}
+          , _react2.default.createElement('div', { className: "flex items-center justify-between gap-3"   ,}
+            , _react2.default.createElement('div', { className: "flex items-center gap-3 flex-shrink-0"   ,}
+              , _react2.default.createElement(LogoFGS, { size: 46,} )
+              , _react2.default.createElement('div', { className: "hidden sm:block" ,}
+                , _react2.default.createElement('p', { className: "text-[9px] uppercase tracking-widest opacity-60 leading-tight"    ,}, "Fundación")
+                , _react2.default.createElement('p', { className: "text-sm font-bold leading-tight tracking-wide"   ,}, "Grupo Social" )
+              )
+            )
+            , _react2.default.createElement('div', { className: "text-center flex-1 min-w-0"  ,}
+              , _react2.default.createElement('h1', { className: "text-base sm:text-xl font-extrabold leading-tight tracking-wide"    ,}, "Plan Educativo Municipal"  )
+              , _react2.default.createElement('p', { className: "text-[10px] sm:text-xs text-blue-100 opacity-90"   ,}, "Necoclí 2025–2035 · Priorización Participativa"    )
+            )
+            , _react2.default.createElement('div', { className: "flex items-center gap-3 flex-shrink-0"   ,}
+              , _react2.default.createElement('div', { className: "hidden sm:block text-right"  ,}
+                , _react2.default.createElement('p', { className: "text-[9px] uppercase tracking-widest opacity-60 leading-tight"    ,}, "Alcaldía de" )
+                , _react2.default.createElement('p', { className: "text-sm font-bold leading-tight tracking-wide"   ,}, "Necoclí")
+              )
+              , _react2.default.createElement(LogoAlcaldia, { size: 46,} )
+            )
+          )
+        )
+      )
+
+      , _react2.default.createElement('div', { className: "bg-white border-b shadow-sm"  ,}
+        , _react2.default.createElement('div', { className: "max-w-4xl mx-auto px-4 py-2 flex items-center justify-between"      ,}
+          , _react2.default.createElement('div', { className: "flex items-center gap-2 text-xs text-gray-500"    ,}
+            , _react2.default.createElement(_lucidereact.GraduationCap, { size: 14, className: "text-blue-600",} )
+            , _react2.default.createElement('span', null, "Mesa Educativa Municipal"  )
+          )
+          , _react2.default.createElement('span', { className: "text-xs text-gray-400 hidden sm:block"   ,}, "Secretaría de Educación, Cultura y Deportes"     )
+        )
+      )
+
+      , _react2.default.createElement('div', { className: "max-w-4xl mx-auto px-4 py-6"   ,}
+        , _react2.default.createElement(StepIndicator, { current: step, labels: STEPS,} )
+
+        /* STEP 0 */
+        , step === 0 && (
+          _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+            , _react2.default.createElement('div', { className: "flex items-center gap-3 mb-5"   ,}
+              , _react2.default.createElement('div', { className: "w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center"      ,}, _react2.default.createElement(_lucidereact.User, { size: 20, className: "text-blue-600",}))
+              , _react2.default.createElement('div', null, _react2.default.createElement('h2', { className: "text-lg font-bold text-gray-800"  ,}, "Identificación del Actor"  ), _react2.default.createElement('p', { className: "text-sm text-gray-500" ,}, "¿Quién está priorizando?"  ))
+            )
+            , _react2.default.createElement('div', { className: "space-y-4",}
+              , _react2.default.createElement('div', null
+                , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Tipo de Actor / Categoría *"     )
+                , _react2.default.createElement('select', { value: formData.tipoActor, onChange: e => setFormData({...formData, tipoActor: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"          ,}
+                  , _react2.default.createElement('option', { value: "",}, "Seleccione el tipo de actor..."    )
+                  , ACTORES.map(g => (_react2.default.createElement('optgroup', { key: g.grupo, label: g.grupo,}, g.opciones.map(o => (_react2.default.createElement('option', { key: o, value: o,}, o))))))
+                )
+                , formData.tipoActor && _react2.default.createElement('p', { className: "text-xs text-blue-600 mt-1"  ,}, "📌 Sector: "  , sectorOf(formData.tipoActor))
+              )
+              , _react2.default.createElement('div', null
+                , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Nombre de la Institución / Organización"     )
+                , _react2.default.createElement('input', { type: "text", placeholder: "Ej: I.E. Eduardo Espitia Romero..."    , value: formData.nombreInstitucion, onChange: e => setFormData({...formData, nombreInstitucion: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500"        ,})
+              )
+              , _react2.default.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 gap-4"   ,}
+                , _react2.default.createElement('div', null
+                  , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Rol *" )
+                  , _react2.default.createElement('select', { value: formData.rol, onChange: e => setFormData({...formData, rol: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 bg-white"         ,}
+                    , _react2.default.createElement('option', { value: "",}, "Seleccione su rol..."  )
+                    , ROLES.map(r => _react2.default.createElement('option', { key: r, value: r,}, r))
+                  )
+                )
+                , _react2.default.createElement('div', null
+                  , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Nombre completo *"  )
+                  , _react2.default.createElement('input', { type: "text", placeholder: "Su nombre..." , value: formData.nombre, onChange: e => setFormData({...formData, nombre: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500"        ,})
+                )
+              )
+              , _react2.default.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 gap-4"   ,}
+                , _react2.default.createElement('div', null
+                  , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Correo electrónico" )
+                  , _react2.default.createElement('input', { type: "email", placeholder: "correo@ejemplo.com", value: formData.correo, onChange: e => setFormData({...formData, correo: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500"        ,})
+                )
+                , _react2.default.createElement('div', null
+                  , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, "Teléfono")
+                  , _react2.default.createElement('input', { type: "tel", placeholder: "3XX XXX XXXX"  , value: formData.telefono, onChange: e => setFormData({...formData, telefono: e.target.value}), className: "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-blue-500"        ,})
+                )
+              )
+            )
+          )
+        )
+
+        /* STEP 1 */
+        , step === 1 && (
+          _react2.default.createElement('div', { className: "space-y-4",}
+            , _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+              , _react2.default.createElement('div', { className: "flex items-center gap-3 mb-2"   ,}
+                , _react2.default.createElement('div', { className: "w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"      ,}, _react2.default.createElement(_lucidereact.Target, { size: 20, className: "text-purple-600",}))
+                , _react2.default.createElement('div', null, _react2.default.createElement('h2', { className: "text-lg font-bold text-gray-800"  ,}, "Líneas Estratégicas" ), _react2.default.createElement('p', { className: "text-sm text-gray-500" ,}, "Califique de 1 a 5 estrellas y ordene"       ))
+              )
+              , _react2.default.createElement('div', { className: "bg-amber-50 border border-amber-200 rounded-lg p-3 mb-5"     ,}
+                , _react2.default.createElement('p', { className: "text-xs text-amber-800" ,}, "⭐ " , _react2.default.createElement('strong', null, "5 = Máxima prioridad"   ), " para su institución/organización. Use las flechas para reordenar."        )
+              )
+              , _react2.default.createElement('div', { className: "space-y-3 mb-6" ,}
+                , LINEAS.map(linea => {
+                  const Icon = linea.icon;
+                  return (
+                    _react2.default.createElement('div', { key: linea.id, className: "border rounded-xl p-4 hover:shadow-md transition-shadow"    , style: {borderLeftWidth:4, borderLeftColor:linea.color},}
+                      , _react2.default.createElement('div', { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3"     ,}
+                        , _react2.default.createElement('div', { className: "flex items-center gap-3 flex-1"   ,}
+                          , _react2.default.createElement('div', { className: "w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"      , style: {backgroundColor:linea.color+'20'},}
+                            , _react2.default.createElement(Icon, { size: 18, style: {color:linea.color},})
+                          )
+                          , _react2.default.createElement('div', null
+                            , _react2.default.createElement('h3', { className: "font-semibold text-gray-800 text-sm"  ,}, linea.id, ": " , linea.nombre)
+                            , _react2.default.createElement('p', { className: "text-xs text-gray-500" ,}, linea.descripcion)
+                          )
+                        )
+                        , _react2.default.createElement(StarRating, { value: lineRatings[linea.id], onChange: v => setLineRatings({...lineRatings,[linea.id]:v}),})
+                      )
+                    )
+                  );
+                })
+              )
+              , _react2.default.createElement('h3', { className: "font-semibold text-gray-700 mb-2 text-sm"   ,}, "🔢 Ordene de mayor a menor prioridad:"      )
+              , _react2.default.createElement('div', { className: "space-y-2",}
+                , lineRanking.map((lid, idx) => {
+                  const linea = LINEAS.find(l => l.id === lid);
+                  return (
+                    _react2.default.createElement('div', { key: lid, className: "flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2"      ,}
+                      , _react2.default.createElement('span', { className: "w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"         , style: {backgroundColor:linea.color},}, idx+1)
+                      , _react2.default.createElement('span', { className: "flex-1 text-sm font-medium text-gray-700"   ,}, linea.id, ": " , linea.nombre)
+                      , _react2.default.createElement('button', { type: "button", onClick: () => moveLineUp(idx), disabled: idx===0, className: "p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"   ,}, _react2.default.createElement(_lucidereact.ArrowUp, { size: 16,}))
+                      , _react2.default.createElement('button', { type: "button", onClick: () => moveLineDown(idx), disabled: idx===lineRanking.length-1, className: "p-1 text-gray-400 hover:text-gray-700 disabled:opacity-30"   ,}, _react2.default.createElement(_lucidereact.ArrowDown, { size: 16,}))
+                    )
+                  );
+                })
+              )
+            )
+            , Object.values(lineRatings).some(v => v > 0) && (
+              _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+                , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-3 text-center"    ,}, "📊 Vista previa — Importancia de Líneas"      )
+                , _react2.default.createElement('div', { style: {width:'100%',height:280},}
+                  , _react2.default.createElement(_recharts.ResponsiveContainer, { width: "100%", height: "100%",}
+                    , _react2.default.createElement(_recharts.RadarChart, { data: radarData,}
+                      , _react2.default.createElement(_recharts.PolarGrid, null), _react2.default.createElement(_recharts.PolarAngleAxis, { dataKey: "linea", tick: {fontSize:12},}), _react2.default.createElement(_recharts.PolarRadiusAxis, { angle: 30, domain: [0,5], tick: {fontSize:10},})
+                      , _react2.default.createElement(_recharts.Radar, { name: "Importancia", dataKey: "valor", stroke: "#3b82f6", fill: "#3b82f6", fillOpacity: 0.3, strokeWidth: 2,})
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+
+        /* STEP 2 */
+        , step === 2 && (
+          _react2.default.createElement('div', { className: "space-y-4",}
+            , _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+              , _react2.default.createElement('div', { className: "flex items-center gap-3 mb-2"   ,}
+                , _react2.default.createElement('div', { className: "w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center"      ,}, _react2.default.createElement(_lucidereact.FileText, { size: 20, className: "text-green-600",}))
+                , _react2.default.createElement('div', null, _react2.default.createElement('h2', { className: "text-lg font-bold text-gray-800"  ,}, "Priorización de Proyectos"  ), _react2.default.createElement('p', { className: "text-sm text-gray-500" ,}, "Califique cada proyecto y asigne plazo"     ))
+              )
+              , _react2.default.createElement('div', { className: "bg-blue-50 border border-blue-200 rounded-lg p-3"    ,}
+                , _react2.default.createElement('p', { className: "text-xs text-blue-800" ,}, "📌 🟢 Corto (2025-2027) · 🟡 Mediano (2028-2031) · 🔴 Largo (2032-2035)"           )
+              )
+            )
+            , LINEAS.map(linea => {
+              const Icon = linea.icon;
+              return (
+                _react2.default.createElement('div', { key: linea.id, className: "bg-white rounded-2xl shadow-lg overflow-hidden"   ,}
+                  , _react2.default.createElement('div', { className: "px-5 py-3 flex items-center gap-2"    , style: {backgroundColor:linea.color+'15'},}
+                    , _react2.default.createElement(Icon, { size: 18, style: {color:linea.color},})
+                    , _react2.default.createElement('h3', { className: "font-bold text-sm" , style: {color:linea.color},}, linea.id, ": " , linea.nombre)
+                    , lineRatings[linea.id] > 0 && _react2.default.createElement('span', { className: "ml-auto text-xs px-2 py-0.5 rounded-full font-semibold text-white"      , style: {backgroundColor:linea.color},}, "⭐ " , lineRatings[linea.id], "/5")
+                  )
+                  , _react2.default.createElement('div', { className: "p-4 space-y-3" ,}
+                    , PROYECTOS[linea.id].map(proj => (
+                      _react2.default.createElement('div', { key: proj.id, className: "border rounded-lg p-3 hover:bg-gray-50 transition-colors"    ,}
+                        , _react2.default.createElement('p', { className: "text-sm font-medium text-gray-800 mb-1"   ,}, proj.nombre)
+                        , _react2.default.createElement('p', { className: "text-xs text-gray-400 mb-2"  ,}, "Meta 2035: "  , proj.meta)
+                        , _react2.default.createElement('div', { className: "flex flex-col sm:flex-row sm:items-center gap-2"    ,}
+                          , _react2.default.createElement('div', { className: "flex items-center gap-1"  ,}
+                            , _react2.default.createElement('span', { className: "text-xs text-gray-500 mr-1"  ,}, "Prioridad:")
+                            , _react2.default.createElement(StarRating, { value: projectRatings[proj.id]||0, onChange: v => setProjectRatings({...projectRatings,[proj.id]:v}),})
+                          )
+                          , _react2.default.createElement('div', { className: "flex gap-1 sm:ml-auto"  ,}
+                            , PLAZOS.map(p => (
+                              _react2.default.createElement('button', { key: p.id, type: "button", onClick: () => setProjectPlazos({...projectPlazos,[proj.id]:p.id}),
+                                className: `text-xs px-2.5 py-1 rounded-full border transition-all ${projectPlazos[proj.id]===p.id ? 'bg-gray-800 text-white border-gray-800' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'}`,}
+                                , p.icon, " " , p.tag
+                              )
+                            ))
+                          )
+                        )
+                      )
+                    ))
+                  )
+                )
+              );
+            })
+          )
+        )
+
+        /* STEP 3 */
+        , step === 3 && (
+          _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+            , _react2.default.createElement('div', { className: "flex items-center gap-3 mb-5"   ,}
+              , _react2.default.createElement('div', { className: "w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center"      ,}, _react2.default.createElement(_lucidereact.Sparkles, { size: 20, className: "text-amber-600",}))
+              , _react2.default.createElement('div', null, _react2.default.createElement('h2', { className: "text-lg font-bold text-gray-800"  ,}, "Aportes y Compromisos"  ), _react2.default.createElement('p', { className: "text-sm text-gray-500" ,}, "Su voz es clave para construir el PEM"       ))
+            )
+            , _react2.default.createElement('div', { className: "space-y-5",}
+              , [{key:'fortaleza',label:'💪 ¿Cuál es la mayor fortaleza educativa de su institución?',ph:'Experiencias significativas, liderazgo, recursos...'},
+                {key:'necesidad',label:'⚠️ ¿Cuál es la necesidad más urgente que debe atender el PEM?',ph:'Infraestructura, conectividad, transporte, pertinencia...'},
+                {key:'compromiso',label:'🤝 ¿Qué compromiso puede asumir su institución?',ph:'Participación en mesas, actualización PEI...'},
+                {key:'sugerencia',label:'💡 Sugerencias adicionales',ph:'Ideas, propuestas, alianzas...'}
+              ].map(f => (
+                _react2.default.createElement('div', { key: f.key,}
+                  , _react2.default.createElement('label', { className: "block text-sm font-semibold text-gray-700 mb-1"    ,}, f.label)
+                  , _react2.default.createElement('textarea', { rows: 3, value: comentarios[f.key], onChange: e => setComentarios({...comentarios,[f.key]:e.target.value}),
+                    className: "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500"        , placeholder: f.ph,})
+                )
+              ))
+            )
+          )
+        )
+
+        /* STEP 4 */
+        , step === 4 && (
+          _react2.default.createElement('div', { className: "space-y-4",}
+            , _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+              , _react2.default.createElement('div', { className: "flex items-center gap-3 mb-5"   ,}
+                , _react2.default.createElement('div', { className: "w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center"      ,}, _react2.default.createElement(_lucidereact.BarChart3, { size: 20, className: "text-green-600",}))
+                , _react2.default.createElement('div', null
+                  , _react2.default.createElement('h2', { className: "text-lg font-bold text-gray-800"  ,}, "Resumen de Priorización"  )
+                  , _react2.default.createElement('p', { className: "text-sm text-gray-500" ,}, formData.nombre)
+                  , _react2.default.createElement('p', { className: "text-xs text-gray-400" ,}, displayInstitucion, " · "  , formData.rol)
+                )
+              )
+              , _react2.default.createElement('div', { className: "mb-6",}
+                , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-3"   ,}, "📊 Importancia por Línea"   )
+                , _react2.default.createElement('div', { style: {width:'100%',height:260},}
+                  , _react2.default.createElement(_recharts.ResponsiveContainer, { width: "100%", height: "100%",}
+                    , _react2.default.createElement(_recharts.RadarChart, { data: radarData,}
+                      , _react2.default.createElement(_recharts.PolarGrid, null), _react2.default.createElement(_recharts.PolarAngleAxis, { dataKey: "linea", tick: {fontSize:11},}), _react2.default.createElement(_recharts.PolarRadiusAxis, { angle: 30, domain: [0,5], tick: {fontSize:9},})
+                      , _react2.default.createElement(_recharts.Radar, { name: "Importancia", dataKey: "valor", stroke: "#3b82f6", fill: "#3b82f6", fillOpacity: 0.35, strokeWidth: 2,})
+                    )
+                  )
+                )
+              )
+              , _react2.default.createElement('div', { className: "mb-6",}
+                , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-2"   ,}, "🔢 Ranking de Líneas"   )
+                , _react2.default.createElement('div', { className: "flex flex-wrap gap-2"  ,}
+                  , lineRanking.map((lid, idx) => {
+                    const linea = LINEAS.find(l => l.id === lid);
+                    return (
+                      _react2.default.createElement('div', { key: lid, className: "flex items-center gap-1.5 bg-gray-50 rounded-full px-3 py-1.5"      ,}
+                        , _react2.default.createElement('span', { className: "w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"        , style: {backgroundColor:linea.color},}, idx+1)
+                        , _react2.default.createElement('span', { className: "text-xs font-medium text-gray-700"  ,}, linea.nombre)
+                      )
+                    );
+                  })
+                )
+              )
+              , _react2.default.createElement('div', { className: "mb-6",}
+                , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-3"   ,}, "📈 Promedio por Línea (Proyectos)"    )
+                , _react2.default.createElement('div', { style: {width:'100%',height:180},}
+                  , _react2.default.createElement(_recharts.ResponsiveContainer, { width: "100%", height: "100%",}
+                    , _react2.default.createElement(_recharts.BarChart, { data: barData, layout: "vertical",}
+                      , _react2.default.createElement(_recharts.CartesianGrid, { strokeDasharray: "3 3" ,}), _react2.default.createElement(_recharts.XAxis, { type: "number", domain: [0,5], tick: {fontSize:10},}), _react2.default.createElement(_recharts.YAxis, { type: "category", dataKey: "nombre", tick: {fontSize:11}, width: 35,}), _react2.default.createElement(_recharts.Tooltip, null)
+                      , _react2.default.createElement(_recharts.Bar, { dataKey: "promedio", radius: [0,4,4,0],}, barData.map((entry, i) => _react2.default.createElement(_recharts.Cell, { key: i, fill: entry.fill,})))
+                    )
+                  )
+                )
+              )
+              , topProjects.length > 0 && (
+                _react2.default.createElement('div', { className: "mb-4",}
+                  , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-2"   ,}, "🏆 Proyectos prioritarios (≥ 4 estrellas)"     )
+                  , _react2.default.createElement('div', { className: "space-y-1.5",}
+                    , topProjects.map((p,i) => (
+                      _react2.default.createElement('div', { key: p.id, className: "flex items-center gap-2 text-xs bg-gray-50 rounded-lg px-3 py-2"       ,}
+                        , _react2.default.createElement('span', { className: "font-bold text-gray-400 w-4"  ,}, i+1, ".")
+                        , _react2.default.createElement('span', { className: "w-2.5 h-2.5 rounded-full flex-shrink-0"   , style: {backgroundColor:p.color},})
+                        , _react2.default.createElement('span', { className: "flex-1 text-gray-700" ,}, p.nombre)
+                        , _react2.default.createElement('span', { className: "text-yellow-500",}, '★'.repeat(p.rating))
+                        , p.plazo && _react2.default.createElement('span', { className: "text-gray-400",}, p.plazo==='corto'?'🟢':p.plazo==='mediano'?'🟡':'🔴')
+                      )
+                    ))
+                  )
+                )
+              )
+            )
+
+            , (comentarios.fortaleza||comentarios.necesidad||comentarios.compromiso||comentarios.sugerencia) && (
+              _react2.default.createElement('div', { className: "bg-white rounded-2xl shadow-lg p-6"   ,}
+                , _react2.default.createElement('h3', { className: "text-sm font-semibold text-gray-700 mb-3"   ,}, "📝 Aportes cualitativos"  )
+                , _react2.default.createElement('div', { className: "space-y-3",}
+                  , comentarios.fortaleza && _react2.default.createElement('div', { className: "bg-green-50 rounded-lg p-3"  ,}, _react2.default.createElement('p', { className: "font-semibold text-green-700 text-xs mb-1"   ,}, "💪 Fortaleza:" ), _react2.default.createElement('p', { className: "text-green-900 text-xs" ,}, comentarios.fortaleza))
+                  , comentarios.necesidad && _react2.default.createElement('div', { className: "bg-red-50 rounded-lg p-3"  ,}, _react2.default.createElement('p', { className: "font-semibold text-red-700 text-xs mb-1"   ,}, "⚠️ Necesidad:" ), _react2.default.createElement('p', { className: "text-red-900 text-xs" ,}, comentarios.necesidad))
+                  , comentarios.compromiso && _react2.default.createElement('div', { className: "bg-blue-50 rounded-lg p-3"  ,}, _react2.default.createElement('p', { className: "font-semibold text-blue-700 text-xs mb-1"   ,}, "🤝 Compromiso:" ), _react2.default.createElement('p', { className: "text-blue-900 text-xs" ,}, comentarios.compromiso))
+                  , comentarios.sugerencia && _react2.default.createElement('div', { className: "bg-amber-50 rounded-lg p-3"  ,}, _react2.default.createElement('p', { className: "font-semibold text-amber-700 text-xs mb-1"   ,}, "💡 Sugerencia:" ), _react2.default.createElement('p', { className: "text-amber-900 text-xs" ,}, comentarios.sugerencia))
+                )
+              )
+            )
+
+            , _react2.default.createElement('div', { className: "bg-gradient-to-r from-[#0d2240] to-[#0f6b3a] rounded-2xl shadow-lg p-6 text-white text-center"       ,}
+              , _react2.default.createElement('div', { className: "flex items-center justify-center gap-6 mb-4"    ,}
+                , _react2.default.createElement(LogoFGS, { size: 40,})
+                , _react2.default.createElement('span', { className: "text-white opacity-30 text-2xl font-thin"   ,}, "|")
+                , _react2.default.createElement(LogoAlcaldia, { size: 40,})
+              )
+              , _react2.default.createElement('h3', { className: "font-bold text-lg mb-2"  ,}, "¿Todo listo?" )
+              , _react2.default.createElement('p', { className: "text-blue-100 text-sm mb-5"  ,}, "Al enviar, sus datos serán consolidados para la Mesa Educativa Municipal de Necoclí."            )
+              , _react2.default.createElement('button', { onClick: handleSubmit, disabled: sending, className: "bg-white text-blue-800 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2 shadow-lg disabled:opacity-60"            ,}
+                , sending ? _react2.default.createElement(_lucidereact.Loader2, { size: 18, className: "animate-spin",}) : _react2.default.createElement(_lucidereact.Send, { size: 18,}), " ", sending ? "Enviando..." : "Enviar priorización"
+              )
+            )
+          )
+        )
+
+        /* NAV */
+        , _react2.default.createElement('div', { className: "flex justify-between items-center mt-6 pb-8"    ,}
+          , _react2.default.createElement('button', { onClick: () => setStep(Math.max(0, step-1)), disabled: step===0,
+            className: "flex items-center gap-1 px-4 py-2.5 rounded-xl text-sm font-medium disabled:opacity-30 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 shadow-sm"              ,}
+            , _react2.default.createElement(_lucidereact.ChevronLeft, { size: 16,}), " Anterior"
+          )
+          , _react2.default.createElement('span', { className: "text-xs text-gray-400" ,}, "Paso " , step+1, " de "  , STEPS.length)
+          , step < 4 ? (
+            _react2.default.createElement('button', { onClick: () => setStep(Math.min(4, step+1)), disabled: step===0 && !isStep1Valid,
+              className: "flex items-center gap-1 px-4 py-2.5 rounded-xl text-sm font-medium disabled:opacity-30 bg-blue-600 text-white hover:bg-blue-700 shadow-sm"            ,}, "Siguiente "
+               , _react2.default.createElement(_lucidereact.ChevronRight, { size: 16,})
+            )
+          ) : _react2.default.createElement('div', null)
+        )
+
+        /* FOOTER */
+        , _react2.default.createElement('div', { className: "border-t border-gray-200 pt-4 pb-6"   ,}
+          , _react2.default.createElement('div', { className: "flex items-center justify-center gap-5 mb-2"    ,}
+            , _react2.default.createElement('div', { className: "flex items-center gap-2"  ,}
+              , _react2.default.createElement(LogoFGS, { size: 28,})
+              , _react2.default.createElement('span', { className: "text-[10px] text-gray-400 font-medium"  ,}, "Fundación Grupo Social"  )
+            )
+            , _react2.default.createElement('span', { className: "text-gray-200",}, "|")
+            , _react2.default.createElement('div', { className: "flex items-center gap-2"  ,}
+              , _react2.default.createElement(LogoAlcaldia, { size: 28,})
+              , _react2.default.createElement('span', { className: "text-[10px] text-gray-400 font-medium"  ,}, "Alcaldía de Necoclí"  )
+            )
+          )
+          , _react2.default.createElement('p', { className: "text-center text-[10px] text-gray-300"  ,}, "Secretaría de Educación, Cultura y Deportes · Mesa de Educación Municipal"          )
+        )
+      )
+    )
+  );
+} exports.default = PEMPriorizacion;
+</script></head>
+  <body>
+  
+
+<div id="preview-app"></div></body></html>
